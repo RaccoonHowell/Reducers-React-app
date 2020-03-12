@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer  } from "react";
 
 const initial = { clicked: false };
 
@@ -13,7 +13,7 @@ const reducer = (state, action) => {
     }
 };
 
-const Square = () => {
+const Square = ({ colour }) => {
     const [state, dispatch] = useReducer(reducer, initial);
 
     const handleClick = () => {
@@ -23,10 +23,15 @@ const Square = () => {
     const style = {
         height: 200,
         width: 200,
-        backgroundColor: state.clicked ? "lightblue" : "lightgreen"
+        backgroundColor: state.clicked ? colour : "lightgreen"
     }
 
-    return <div onClick={ handleClick } style={ style } />
+    return (
+        <div className="wrapper">
+            <h3>Challenge 2</h3>
+            <div onClick={ handleClick } style={ style } />
+        </div>
+    )
 }
 
 export default Square;

@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 
 const initial = { clicked: false }
 
@@ -16,7 +16,12 @@ const Clicked = () => {
         dispatch({ type: "click" })
     }
 
-    return <p onClick={ handleClick }>{ state.clicked ? " Clicked" : "Not clicked" }</p>
+    return (
+        <div className="wrapper">
+            <h3>Challenge 1</h3>
+            <p onClick={ handleClick }>{ state.clicked ? " Clicked" : "Not clicked" }</p>
+        </div>
+    )
 }
 
 export default Clicked;
